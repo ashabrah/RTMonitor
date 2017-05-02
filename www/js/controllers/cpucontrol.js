@@ -146,5 +146,8 @@ angular.module('bigred.controllers')
         nocpujobs.series[0].data = data.queuedCPUJobs;
         nocpujobs.series[1].data = data.runningCPUJobs;
         var cpuJobsGraph = new Highcharts.Chart(nocpujobs);
+        
+      }, function(error){
+          console.log("Cannot get data from server:" + error);
       });
 });

@@ -47,7 +47,7 @@ angular.module('bigred.controllers', ['bigred.services'])
       closebuttoncaption: 'Back',
       hardwareback: 'no'
       };
-     $cordovaInAppBrowser.open('http://rtstats-devel.uits.indiana.edu/user/baoyu', '_blank', options)
+     $cordovaInAppBrowser.open('http://discern.uits.iu.edu:8800/p632_casbrii.php', '_blank', options)
 
 
 
@@ -84,6 +84,8 @@ angular.module('bigred.controllers', ['bigred.services'])
       result.$promise.then(function(data){
         $scope.setOverviewStyle(result);
       
+      }, function(error){
+          console.log("Cannot get data from server:" + error);
       }).finally(function() {
           $scope.$broadcast('scroll.refreshComplete');
      });

@@ -146,6 +146,8 @@ angular.module('bigred.controllers')
         nogpujobs.series[1].data = data.runningGPUJobs;
         var gpuJobsChart = new Highcharts.Chart(nogpujobs);
 
+      }, function(error){
+          console.log("Cannot get data from server:" + error);
       });
 
 })

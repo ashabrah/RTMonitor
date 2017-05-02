@@ -53,5 +53,7 @@ angular.module('bigred.controllers')
         nousers.series[1].data = data.gpu.numberGPUUsers;
         var userStatsChart = new Highcharts.Chart(nousers);
 
+      }, function(error){
+          console.log("Cannot get data from server:" + error);
       });
 });

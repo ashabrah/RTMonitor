@@ -80,6 +80,9 @@ angular.module('bigred.controllers')
         qjobs.xAxis.categories = str;
         qjobs.series[0].data = data.queuedJobs;
         var queuedJobsChart = new Highcharts.Chart(qjobs);
+        
+      }, function(error){
+          console.log("Cannot get data from server:" + error);
       });
 
 });
